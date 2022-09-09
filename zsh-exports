@@ -1,0 +1,9 @@
+#!/bin/sh
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE=~/.config/zsh/.zsh_history
+export PATH="$HOME/.mybin/bin":$PATH
+export PATH="$HOME/.cargo/bin":$PATH
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+

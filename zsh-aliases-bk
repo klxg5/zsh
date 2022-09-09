@@ -1,0 +1,82 @@
+
+alias c="clear"
+alias cdc="cd ~/code/cw/CampingWorldRVSales"
+alias cdh="cd ~/Homestead"
+alias gb="git branch"
+alias gbc="git checkout -b"
+alias gbd="git branch -D"
+alias gh="git gc --aggressive --prune=now"
+alias gd="git diff --ignore-space-at-eol"
+alias gds="git diff --staged --ignore-space-at-eol"
+alias gf="git fetch --all --prune"
+alias gl="git log --stat --abbrev-commit"
+alias gn="git clean -fdx storage/"
+alias gs="git status"
+alias ll="ls -la"
+alias npl="npm list -g --depth=0"
+alias npo="npm outdated -g --depth=0"
+alias vm="ssh vagrant@127.0.0.1 -p 2222"
+alias phpunit='vendor/bin/phpunit'
+alias hu="homestead up"
+alias hd="homestead destroy"
+alias hs="homestead suspend"
+alias hh="homestead halt"
+
+function artisan() {
+    php artisan "$@"
+}
+
+function homestead() {
+    if [[ $1 == "update" ]]; then
+        (
+            cdh
+            gf
+            git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+            vagrant destroy --force
+            vagrant box update
+            vagrant box prune --force
+            vagrant up
+        )
+    else
+        ( cdh && vagrant $* )
+    fi
+}
+
+function hpush(){
+    if [ $# -ne 1 ]; then
+        echo "Heroku Push Usage: hpush {appName}" >&2
+        return 1
+    else
+        preview_env=~/Code/default-env
+        #update the env file with the domain info
+        sed -i '' "s;^APP_URL=.*;APP_URL=https://$1.herokuapp.com;" $preview_env
+        sed -i '' "s;^APP_DOMAIN=.*;APP_DOMAIN=$1.herokuapp.com;" $preview_env
+        domain_id="1"
+        if [[ $1 =~ "rvwor" ]]; then
+            domain_id="2"
+        fi
+        if [[ $1 =~ "gander" ]] || [[ $1 =~ "gr" ]]; then
+          domain_id="3"
+        fi
+        if [[ $1 =~ "rvscom" ]]; then
+          domain_id="4"
+        fi
+        if [[ $1 =~ "rvcom" ]]; then
+          domain_id="5"
+        fi
+        if [[ $1 =~ "rvout" ]]; then
+          domain_id="6"
+        fi
+        sed -i '' "s;^DOMAIN_ID=.*;DOMAIN_ID=$domain_id;" $preview_env
+        #push the config
+        heroku config:push -a $1 -o -c -f=$preview_env
+        return 0
+    fi
+}
+function gc() {
+    if [[ -z "$1" ]]; then
+        git checkout $(git branch | cut -c 3- |fzy)
+    else
+        git checkout $1
+    fi
+}
