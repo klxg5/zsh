@@ -1,0 +1,848 @@
+cd .config/zsh
+rm .zsh_history
+touch .zsh_history
+cat /etc/shells
+chsh -s /bin/zsh
+mkdir env
+mv def*.env env
+nvim php-getting-started
+fish
+echo $PATH | grep .mybin
+~/.mybin/bin/nvim ~/.config/zsh/zsh-exports
+cd .local
+cd share
+cd ~/.mybin
+echo $PATH
+nvim ~/.config/nvim/init.vim
+ssh-keygen -t ed25519 -C "allen.redding@campingworld.com"
+ssh-add -K ~/.ssh/cw_ed25519
+ssh-keygen -t ed25519 -C "glyakk@gmail.com"
+eval "$(ssh-agent -s)"
+mkdir old
+mv cw* old
+mv klxg* old
+nvim ~/Homestead/init.sh
+nvim after.sh
+nvim aliases
+nvim ~/Homestead/Homestead.yaml.example
+brew remove VirtualBox\ VMs
+nvim known_hosts
+cat ~/.ssh/klxg5_ed25519.pub
+ssh-add --apple-use-keychain ~/.ssh/klxg5_ed25519
+ssh-add --apple-use-keychain ~/.ssh/cw_ed25519
+ssh-add -l
+chmod 744 config
+git clone klxg5git:klxg5/neovim.git
+cd neovim
+mv neovim nvim
+brew remove fish
+softwareupdate --all --install --force
+sudo rm -rf /Library/Developer/CommandLineTools
+sudo xcode-select --install
+xcode-select -v
+heroku -v
+cd ~/code/CampingWorldRVSales
+rm -rf CampingWorldRVSales
+git pull origin
+git config pull.rebase false
+cat ~/.ssh/cw_ed25519.pub
+git clone cwgit:areddingcw/CampingWorldRVSales.git
+git checkout
+cp ./Homestead.yaml ~/Homestead.yaml
+ll ~/Homestead.yaml
+rm -rf Homestead
+git clone cwgit:laravel/homestead.git ~/Homestead
+cp ./Homestead.yaml ~/Homestead/Homestead.yaml.bk
+cdh
+cp Homestead.yaml.bk Homestead.yaml
+cat Homestead.yaml
+mv ~/CampingWorldRVSales ~/code/cw/CampingWorldRVSales
+brew list | grep vagrant
+vagrant -v
+virtualbox -v
+vagrant up
+nvim Homestead/Homestead.yaml
+nvim /etc/vbox/networks.conf
+cd etc/
+cd vbo
+ll vbox
+cd /etc/vbox
+cat networks.conf
+sudo csrutil clear
+sudo kextcache --clear-staging
+sudo nvim /etc/vbox/networks.conf
+cd /Library/StartupItems/
+cat /etc/vbox/networks.conf
+brew search qemu
+brew remove virtualbox
+brew install virtualbox
+homestead update
+cd ~/Homestead
+cd resources
+cat aliases
+brew install php
+brew remove alacritty
+brew remove notion
+brew remove whatsapp
+brew remove bartender
+brew install obs-ndi
+brew remove opera
+which php
+cd /usr/local/bin
+ll | grep php
+cd ../Cellar/php
+which php7
+cd php@7.4
+brew install php@7.4
+sudo chown -R $(whoami) /usr/local/Cellar/php@7.4/7.4.29
+brew reinstall php@7.4
+cd ../php
+brew search keepass
+brew search alfred
+brew install alfred
+cd ~/.code/cw
+git clone cwgit:areddingcw/rvsales-templateportal.git
+git clone cwgit:areddingcw/overton-boats.git
+\
+m
+brew search acrobat
+brew search wacom
+brew install wacom
+brew install wacom-tablet
+brew install homebrew/cask-drivers/wacom-tablet
+nvim init.sh
+chmod 755 init.sh
+chmod 644 init.sh
+ll resources
+cat init.sh
+cp -i resources/aliases aliases
+rm aliases
+bash init.sh
+cd Volumes
+cd NO\ NAME
+cd envs
+cd rvsalestemplate
+cp .env ~/code/cw/rvsales-templateportal/
+cp .env-bk ~/code/cw/rvsales-templateportal/
+cp .env ~/code/cw/CampingWorldRVSales
+cp .env-bk ~/code/cw/CampingWorldRVSales
+cp .env-hk ~/code/cw/CampingWorldRVSales
+cp .env-heroku ~/code/cw/CampingWorldRVSales
+cp .env.heroku ~/code/cw/CampingWorldRVSales
+cp .env.example ~/code/cw/CampingWorldRVSales
+cd code/cw/
+cat ~/Homestead/Homestead.yaml
+nvim ~/Homestead/Homestead.yaml
+git branch
+git checkout origin/travel-different
+git checkout origin/RV-1280
+git checkout RV-1161
+git checkout travel-different
+cd code/cw
+brew search chrome
+brew install google-chrome
+cd overton-boats
+cp overton-boats/.vscode rvsales-templateportal
+cp -R overton-boats/.vscode rvsales-templateportal
+ll rvsales-templateportal/.vscode
+cd ../rvsales-templateportal
+composer search php_codesniffer
+man composer
+homestead up
+homestead provision
+git checkout origin/develop
+git checkout -b RV-1450
+git commit -m "RV-1450 add options for carousel to form"
+git push --set-upstream origin RV-1450
+git commit -m "RV-1450 reinstate htaccess"
+hk-create cp ../CampingWorldRVSales/.env.heroku ./
+cp ../CampingWorldRVSales/.env.heroku ./
+hk-create cwapp-rv1450
+heroku git:remote -a cwapp-rv1450
+git remote rename heroku heroku-cwapp-rv1450
+git push heroku-cwapp-rv1450 RV-1450:master
+git checkout upstream/travel-different
+git checkout RV-1450
+node search phpcs
+node -v
+brew search node
+node
+man node
+brew phpcs
+brew install php-cs-fixer
+composer global require "squizlabs/php_codesniffer=*"
+cd /Users/allen.redding/.composer
+cd vendor
+cd squizlabs
+which php_codesniffer
+cd php_codesniffer
+cd bin
+which php_cs_fixer
+brew search phpcs
+which php-cs-fixer
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults read
+defaults read | grep vscode
+defaults read | grep applepressandholdenabled
+defaults read com.microsoft.VSCode
+git remote add upstream cwgit:GoodSamEnterprises/rvsales-templateportal.git
+source .zshrc
+hk derp
+hk boom
+hk create tikki
+hk create
+hk create lala
+br
+br something else to this
+br hala
+heroku git:remote -a aredd-rv1280
+git remote rename heroku heroku-aredd-rv1280
+git checkout -b RV-1432
+git commit -m "RV-1432 PURL wording changed"
+hk-create cwapp-rv1432
+heroku git:remote -a cwapp-rv1432
+git remote rename heroku heroku-cwapp-rv1432
+git push heroku-cwapp-rv1432 RV-1432:master
+git push --set-upstream origin RV-1432
+heroku config:push -f .env -o -c -a "cwapp-rv1450"
+nvim zsh-aliases
+nvim ~/.config/nvim/lua/base/settings.lua
+brew update nvim
+brew upgrade nvim
+brew search nvim
+cd ~/Downloads
+ls -al nvim*
+ls -al nvim-osx64/bin/nvim
+cd nvim-osx64
+tar xzvf nvim-macos\(1\).tar.gz
+tar xzvf nvim-macos\(2\).tar.gz
+./nvim-osx64/bin/nvim
+./nvim-osx64/bin/nvim -v
+rm -rf nvim-osx64
+brew install neovim
+which nvim
+mv ~/.mybin/bin/nvim ~/.mybin/bin/nvim2
+nvim2 -v
+ll -ls
+rm -rv nvim-bk
+cd ../staff
+sudo rm -rv nvim-bk
+mv nvim nvim-bk
+cd ../nvim-bk
+rm -rv nvim
+cp nvim-bk nvim
+man cp
+cp -R nvim-bk nvim
+nano init.lua
+nvim2
+nvim2 init.lua
+rm keymap.lua
+rm pluggs
+rm plugins.lua
+rm settings.lua
+rm base
+cd plugin
+rm packer_compiled.lua
+nvim
+brew search lua
+nvim lua/pluggs/lsp
+nvim lua/pluggs/lsp/handlersConf.lua
+npm -l
+npm -l | grep global
+npm -l -g
+npm
+npm ls
+npm -g update
+npm -g ls
+brew search wget
+brew install wget
+nvim lua/pluggs/lsp/lsp-installerConf.lua
+nano lua/base/plugins.lua
+rm plugin/packer_compiled.lua
+nvim --clean
+nvim --clean lua/base/plugins.lua
+brew search sniprun
+brew search rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+lua -v
+brew search python
+nvim -v
+nvim lua/base/plugins.lua
+nvim .viminfo
+cd ~/.config/kitty
+nvim kitty.conf
+man ln
+ln -s ./kitty-themes/themes/OneDark.conf ./theme2.conf
+mv theme2.conf theme.conf
+exitit
+brew search dank
+brew search comic
+cd ~/code/cw/rvsales-templateportal
+brew search zsh-autopair
+cd zsh-syntax-highlighting
+nvim release.md
+kitty list-fonts
+fc-match monospace
+kitty --debug-font-fallback
+kitty config
+nvim ~/.config/zsh/zsh-prompt
+cd ../CampingWorldRVSales
+nvim ~/.config/nvim/lua/base/plugins.lua
+cd zsh-autosuggestions
+cd ../..
+echo $ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE
+echo $ZSH_AUTOSUGGEST*
+env
+env | grep ZSH
+env | grep "ZSH"
+env | grep "zsh"
+set | grep 'zsh'
+set | grep 'ZSH'
+set | grep "ZSH_AUTO"
+set | grep "ZSH_AUTOSUGGEST_"
+brew search neovim
+brew install neovim-qt
+brew search muttl
+\
+mi
+nvim ~/.config/zsh/.zshrc
+nvim lua/pluggs/tree-sitterConf.lua
+cd ~/.local/share/
+cd nvim
+cd site
+cd nvim-treesitter
+nvim install.lua
+brew search ripgrep
+brew search silversearcher
+brew install the_silver_searcher
+man rg
+brew search manly
+brew search bro
+rg treesitter ./.local
+cd ~/.local/share/nvim/site
+cd pack/packer
+cd start
+cd nvim-treesitter/lua
+nvim nvim-treesitter.lua
+cd ~/.config/nvim/init.lua
+brew update dbeaver
+brew search dbeaver
+brew update dbeaver-community
+brew
+brew upgrade dbeaver-community
+brew upgrade inkscape
+brew upgrade keepass
+brew upgrade keepassxc
+brew upgrade kitty
+brew upgrade cyberduck
+\:q
+source ~/.config/kitty/kitty.conf
+nvim ~/.config/kitty/kitty.conf
+hk-create cwapp-rv1433
+cd code/cw/rvsales-templateportal
+heroku git:remote -a cwapp-rv1433
+git remote rename heroku heroku-cwapp-rv1433
+ls -al
+cat ~/.config/zsh/zsh-aliases
+heroku config:push -f .env -o -c -a "cwapp-rv1433"
+git reset --soft HEAD~1
+git checkout -b RV-1433
+git push --set-upstream origin RV-1433
+brew search transmit
+brew install transmit
+brew remove transmit
+brew search s3
+brew inkdrop
+brew search inkdrop
+brew install inkdrop
+brew remove inkdrop
+brew search obsidian
+brew install obsidian
+brew remove obs-ndi
+cd Obsidian
+mkdir templates
+cd templates
+git commit -m "RV-1433 Travel Different template add view/edit"
+git push heroku-cwapp-rv1433 RV-1433:master
+cd Homestead
+nvim Homestead.yaml
+git clone cwgit:areddingcw/CWRV.git
+cw CWRV
+npm login
+mkdir DockerDPM
+mv DockerDPM proxy-manager
+docker-compose up -d
+git push heroku-cwapp-rv1280 RV-1280:master
+git push heroku-aredd-rv1280 RV-1280:master
+git checkout travel-different-2022
+git checkout develop54
+git checkout RV-1280
+git rebase travel-different-2022
+git rebase --continue
+git commit -m "RV-1280 Travel Differnt"
+gf
+git checkout -b RV-1472
+git commit -m "RV-1472 Increase max length slider"
+hk-create cwapp-rv1472
+git remote rename heroku heroku-cwapp-rv1472
+git push heroku-cwapp-rv1472 RV-1472:master
+git push --set-upstream origin RV-1472
+./vendor/bin/sail up
+cd app
+man find
+find ./ ClassMapGenerator.php
+find ./ ClassMap*
+composer -v
+brew list
+rg RvLeads ./
+git checkout developer
+composer update
+sail up
+nvim docker-compose.yaml
+sail php --version
+dail down
+docker ps -a
+docker ps --all
+docker-compose ps
+cd ~/code/cw
+\
+
+cd proxy-manager
+cat ~/code/cw/CWRV/docker-compose.yml
+docker network list
+cat docker-compose.yaml
+cat docker-compose.yml
+composer update laravel/sail:1.14.*
+php composer.phar update laravel/sail:1.14.*
+composer update laravel/sail:1.14
+composer update laravel/sail
+nvim composer.json
+mkdir TestLaravel
+cd TestLaravel
+composer global require "laravel/installer=~1.1"
+~/.composer/vendor/bin/laravel new Test
+rm -rf TestLaravel
+composer create-project laravel/laravel TestRealm
+sudo php artisan
+composer global update
+composer global list
+composer global show
+composer global remove laravel/installer
+rm -rf vendor
+cd TestRealm
+composer require laravel/sail --dev
+php artisan sail:install
+nvim docker-compose.yml
+nvim composer.lock
+git reset --hard HEAD
+git fetch origin
+git pull origin/develop
+git pull origin develop
+git remote add upstream cwgit:GoodSamEnterprises/CWRV.git
+git remote -v
+git pull upstream develop
+cd /
+cd Users
+cd allen.redding
+cd .git
+touch .npmrc
+npm run development
+nvim package-lock.json
+nvim package.json
+cat ~/.npmrc/
+cat ~/.npmrc
+git checkout develop_54
+git checkout -b RV-1518
+git commit -m "RV-1518 PDP bug fixes"
+hk-create cwapp-rv1518
+heroku git:remote -a cwapp-rv1472
+heroku git:remote -a cwapp-rv1518
+git remote rename heroku heroku-cwapp-rv1518
+git push heroku-cwapp-rv1518 RV-1518:master
+git push --set-upstream origin RV-1518
+git checkout -b RV-1544
+git commit -m "RV-1544 disable price tooltip disclaimer"
+git push --set-upstream origin RV-1544
+hk-create cwapp-rv1544
+heroku git:remote -a cwapp-rv1544
+git remote rename heroku heroku-cwapp-rv1544
+git push heroku-cwapp-rv1544 RV-1544:master
+man heroku
+heroku
+mkdir ~/.scratch
+cd ~/.scratch
+mkdir rv1544
+cd CampingWorldRVSales
+ll *heroku*
+nvim .env-hk
+cp .env-hk ../overton-boats
+cp .env-hk ./.env
+brew search matrix
+brew search element
+brew install element
+git checkout -b RV-1583
+hk-create cwapp-rv1583
+heroku git:remote -a cwapp-rv1583
+git remote rename heroku heroku-cwapp-rv1583
+git checkout -b RV-1619
+git commit -m "RV-1619 reposition search icon"
+hk-create cwapp-rv1619
+heroku git:remote -a cwapp-rv1619
+git remote rename heroku heroku-cwapp-rv1619
+git push heroku-cwapp-rv1619 RV-1619:master
+git push --set-upstream origin RV-1619
+git checkout RV-1583
+git push --set-upstream origin RV-1583
+git push heroku-cwapp-rv1583 RV-1583:master
+git commit -m "RV-1583 seo update"
+git push origin RV-1583
+git checkout de
+brew search git
+brew search github-desktop
+brew install github
+brew search tsm
+brew search trade-skill
+brew search zoom
+brew install zoom
+brew install ddcctl
+ddcctl -h
+ddcctl -d 1 -v 200
+ddcctl -d 1 -b 1
+man heroku config
+heroku config
+heroku config -h
+heroku config:set --help
+heroku config:set DOMAIN_ID=3 -a cwapp-rv1619
+heroku config:set DOMAIN_ID=3 -a cwapp-rv1432
+heroku config:set DOMAIN_ID=1 -a cwapp-rv1432
+heroku config:get --help
+heroku config:get DOMAIN_ID -a cwapp-rv1619
+heroku config:get DOMAIN_ID -a cwapp-rv1619 -s
+heroku config --help
+heroku config:edit --help
+echo @EDITOR
+echo $EDITOR
+echo $VISUAL
+heroku config:edit -a cwapp-rv1432
+cd code
+cd cw
+cd CWRV
+cd ,,
+cd Sync
+brew search postman
+brew install postman
+brew outdatede
+brew search benguiat
+cd rv1544
+nvim rv1544/scratch
+cd seo
+cd scratch
+nvim scratch
+man ls
+ls -alt
+ls -altr
+cd .scratch
+cd RV-1028
+nvim ~/.config/zsh/zsh-aliases
+source ~/.config/zsh/.zshrc
+llt
+mkdir RV-1688
+cp ./RV-1028/parseScript.php ./RV-1688/parseScript.php
+mv RV\ Sales\ Other\ Dealership\ Pages.csv RVSalesOtherDealershipPages.csv
+nvim RVSalesOtherDealershipPages.csv
+cd .scratch/RV-1688
+php parseScript.php
+git pull master
+git checkout -b RV-1671
+hk-create cwapp-rv1671
+heroku git:remote -a cwapp-rv1671
+git remote rename heroku heroku-cwapp-rv1671
+git commit -m "RV-1671 init"
+git push heroku-cwapp-rv1671 RV-1671:master
+git push --set-upstream origin RV-1671
+git checkout -b RV-1688
+git commit -m "RV-1688 init"
+hk-create cwapp-rv1688
+heroku git:remote -a cwapp-rv1688
+git remote rename heroku heroku-cwapp-rv1688
+git push heroku-cwapp-rv1688 RV-1688:master
+git checkout -b RV-1705
+git commit -m "RV-1705 init"
+hk-create cwapp-rv1705
+heroku git:remote -a cwapp-rv1705
+git remote rename heroku heroku-cwapp-rv1705
+git push --set-upstream origin RV-1705
+git checkout -b RV-1697
+git commit -m "RV-1697 init"
+hk-create cwapp-rv1697
+heroku git:remote -a cwapp-rv1697
+git remote rename heroku heroku-cwapp-rv1697
+git push --set-upstream origin RV-1697
+git commit -m "RV-1697 Airstream Deal Pending showing price"
+heroku login
+git push heroku-cwapp-rv1697 RV-1697:master
+git checkout -b RV-1742
+hk-create cwapp-rv1742
+heroku git:remote -a cwapp-rv1742
+git remote rename heroku heroku-cwapp-rv742
+git push heroku-cwapp-rv1742 RV-1742:master
+git checkout RV-1705
+git commit -m "RV-1705 Core page SEO"
+git push heroku-cwapp-rv1705 RV-1705:master
+git checkout -b RV-1746
+hk-create cwapp-rv1746
+heroku git:remote -a cwapp-rv1746
+git remote rename heroku heroku-cwapp-rv746
+git remote rename heroku-cwapp-rv746 heroku-cwapp-rv1746
+git commit -m "RV-1746 close out link"
+git push heroku-cwapp-rv1746 RV-1746:master
+git push --set-upstream origin RV-1746
+nvim .git/config
+heroku plugins:install heroku-builds
+heroku builds:purge -a cwapp-rv1705
+heroku builds:cache:purge -a cwapp-rv1705
+cd ~/.scratch/RV-1742
+cd code/cw/CampingWorldRVSales
+cd ../CWRV
+cd ../overton-boats
+nvim .env
+nvim app/helpers.php
+cat ./*env*
+cat ./%env%
+cat env
+cat .env-hk
+cat .env.example
+cat .env.example | grep min
+cat .env.example | grep rand
+cat .env.1654799581 | grep rand
+cat .env.1654799581
+heroku ssh
+homestead ssh
+php artisan help make:model
+php artisan make:model SeoA
+nvim blah
+brew search raindrop
+cd .scratch/RV-1742
+..
+cd RV-1688
+mv parseScript.php ../RV-1742
+cd ../RV-1742
+nvim RVSalesRound3.csv
+nvim parseScript.php
+rm output.sql
+php parseScript.php > output.sql
+nvim output.sql
+cd ~/code/cw/CampingWorldRVSales
+git checkout develoo
+git checkout RV-1746
+ping 192.168.0.245
+ssh 192.168.4.48
+ping 192.168.4.48
+ping 192.168.4.30
+ping maui
+cd .ssh
+cat config
+ssh 192.168.4.30
+ssh allen@192.168.4.30
+php -v
+php artisan make:controller SeoController2
+ssh maui
+nvim .ssh/config
+brew search gimp
+brew install gimp
+git checkout develop-54
+npm ci
+sudo npm ci
+git checkout main
+git checkout RV-1433
+git checkout master
+brew search syncthing
+sudo npm install
+\:w
+php artisan tinker
+git checkout -b RV-1757
+git commit -m "RV-1757 init"
+git push --set-upstream origin RV-1757
+brew search anki
+brew install anki
+brew outdated
+git checkout -b RV-1796
+git push --set-upstream origin RV-1796
+git config -l | grep remote
+git config -l | grep upstream
+git config
+git config --show-origin
+git config --get-all
+git config --get-all remote
+git commit -m "RV-1796 init"
+git push heroku-cwapp-rv1796 RV-1796:master
+cd Downloads
+sqlite3 ESVERBS.sql
+nvim ESVERBS.sql
+mkdir ESDBlite
+cd ESDBlite
+mv ../Downloads/ESVERBS.sql ./
+mv ESVERBS.sql ESSQL.sql
+clear
+.read ESSQL.sql
+sqlite3
+sqlite3 ESDB.db
+php artisan cache:clear
+cp resources/scss/pages/compare-rv-types.scss ../../cw/CWRV/resources/scss/pages
+cp resources/views/includes/introvideos.blade.php ../../cw/CWRV/resources/views/includes
+cp resources/views/pages/compare-rv-types.blade.php ../../cw/CWRV/resources/views/pages
+homestead up --provision
+mv cw fork
+mkdir cw
+git clone cwgit:GoodSamEnterprises/CampingWorldRVSales.git
+git clone cwgit:GoodSamEnterprises/CWRV.git
+mv CampingWorldRVSales ./cw/CampingWorldRVSales
+mv CWRV ./cw/CWRV
+cp ./fork/CampingWorldRVSales/.env ./cw/CampingWorldRVSales/.env
+ll ./fork/CampingWorldRVSales
+syncthing
+ll fork
+ll fork/CampingWorldRVSales
+cp ./fork/CampingWorldRVSales/*.env ./cw/CampingWorldRVSales
+ll ./cw/CampingWorldRVSales
+diff cw/CWRV fork/CWRV
+diff cw/CWRV fork/CWRV | grep npm
+cp ./fork/CWRV/.npmrc ./cw/CWRV
+cat .npmrc
+mv .npmrc .npmrc-bk
+cp .npmrc-bk .npmrc
+ll .npmrc*
+nvim .npmrc
+sail tinker
+sail b uild --no-cache
+ll laravel*
+vendor/bin/sail build --no-cache
+sail shell
+find ./ RvLeads
+composer
+brew update
+brew upgrade
+composer dump-autoload
+composer --version
+ll ../fork/CWRV/vendor
+cat composer.json
+cat composer.json | grep sail
+cat ../../fork/CWRV/composer.json | grep sail
+ll ../../fork/CWRV/vendor/laravel
+ll vendor/laravel
+php artisan
+cat artisan
+ll vendor
+ll ../../fork/CWRV/vendor
+homestead halt
+cp ./fork/CampingWorldRVSales/.env* ./cw/CampingWorldRVSales
+cp ./fork/CWRV/.env* ./cw/CWRV
+pwd
+npm audit
+npm audit fix
+npm install
+composer install
+cd cw/CWRV
+docker ps
+git checkout -b RV-1555-1561
+git commit -m "RV-1555-1561 init"
+git push origin
+git push --set-upstream origin RV-1555-1561
+git checkout develop
+ssh Maui
+homestead status
+git config -l | origin
+git config -l | grep origin
+git checkout upstream/rvcw
+git fetch upstream
+nvim /etc/hosts
+git fetch
+defaults write com.jetbrains.PhpStorm ApplePressAndHoldEnabled -bool false
+cat /etc/hosts
+git pull
+git config --global init.defaultBranch master
+cat ../nvim/.git/config
+cat .git/config
+man git config
+git remote add origin klxg5git:klxg5/zsh.git
+git push -u origin master
+cat ~/.ssh/config
+man git submodule
+man gitsubmodules
+git rm --cached plugins/zsh-autopair
+git rm --cached plugins/zsh-autosuggestions
+git rm --cached plugins/zsh-syntax-highlighting
+cd zsh-autopair
+cd ../zsh-autosuggestions
+cd ../zsh-history-substring-search
+cd ../zsh-syntax-highlighting
+git config -l
+cd ../../
+cd ../
+cat .zshenv
+cd .config
+cd kitty-themes
+cd themes
+cat kitty.conf
+rm kitty-themes.zip
+git init
+git commit -m "init"
+git branch -M main
+git remote add origin klxg5git:klxg5/kitty.git
+git push -u origin main
+brew search merge
+brew search meld
+brew install meld
+brew search wimlib
+brew install wimlib
+cd ~
+wimlib-imagex split /Volumes/CCCOMA_X64FRE_EN-US_DV9/sources/install.wim /Volumes/WINUSB/sources/install.swm 4000
+cd ~/.config/nvim
+cd lua
+cd base
+nvim init.lua
+nvim plugins.lua
+man df
+df
+df ./
+df -sh ./
+df -H ./
+df -H ./lua
+df -H
+git commit -m "packup to fedora"
+git push
+cd kitty
+cd zsh
+cd ~/.ssh
+nvim config
+sudo nvim /etc/hosts
+cd code/cw/CWRV
+cd ~/code/cw/CWRV
+cd ~/.config
+nvim .zshrc
+nvim .zshenv
+cd ~/.config/zsh
+cd plugins
+cd .zsh_sessions
+ll
+nvim zsh-vim-mode
+cd ..
+zsh
+sail down
+sail build --no-cache
+sail up -d
+git checkout RV-1555-1561
+git rebase rvcw
+git rebase develop
+git rebase --abort
+git checkout -b RV-1561
+npm run dev
+git add .
+git status
+git commit -m "RV-1561 init"
+git checkout rvcw
+git checkout -b RV-1555
+git checkout RV-1555
+npm run watch
+exit

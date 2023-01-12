@@ -10,6 +10,8 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
+# zoxide
+eval "$(zoxide init zsh)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -36,8 +38,8 @@ zsh_add_plugin "zsh-users/zsh-history-substring-search"
 autoload edit-command-line; zle -N edit-command-line
 
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
+export TERMINAL="kitty"
+export BROWSER="firefox"
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'

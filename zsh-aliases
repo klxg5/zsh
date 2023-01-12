@@ -12,8 +12,8 @@ alias gf="git fetch --all --prune"
 alias gl="git log --stat --abbrev-commit"
 alias gn="git clean -fdx storage/"
 alias gs="git status"
-alias ll="ls -al"
-alias llt="ls -alt"
+alias ll="ls -oathF -D %F --color=auto"
+alias ls="ls -lahF -D %F --color=auto"
 alias npl="npm list -g --depth=0"
 alias npo="npm outdated -g --depth=0"
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
@@ -46,13 +46,62 @@ function homestead() {
 }
 
 function br() {
-	if !( $# == 2 ); then
+	if !( ${#} == 2 ); then
 		echo "moo"
 	else
 		echo "maa"
 	fi
 	echo "$#"
 }
+
+function hktool() {
+    function interactiveset() {
+        heroku apps -A
+        echo "Press CTRL C to exit"
+        read app\?"Which preview app do you want to update? "
+        read evar\?"What ENV variable in ${app} do you want to update or add? "
+        read value\?"What value should ${evar} have? "
+        heroku config:set ${evar}=${value} -a ${app}
+    }
+    function errmsg() {
+        echo "Invalid format"
+    }
+if [[ $# -eq 0 ]]; then
+    interactiveset
+else
+    case $1 in
+        get)
+            if [[ $# -eq 3 ]]; then
+                heroku config:get ${2} -a ${3}
+            elif [[ $# -eq 1 ]]; then
+                heroku apps -A
+                echo "Press CTRL C to exit"
+                read app\?"Which preview app do you want to look up? "
+                read evar\?"What ENV variable in ${app} do you want to check? "
+                heroku config:get ${evar} -a ${app}
+            else
+                errmsg
+            fi
+            ;;
+        set)
+            if [[ $# -eq 3 ]]; then
+                heroku config:set ${2} -a ${3}
+            elif [[ $# -eq 1 ]]; then
+                interactiveset
+            else
+                errmsg
+            fi
+            ;;
+        list | ls)
+            heroku apps -A
+            ;;
+        *)
+            errmsg
+            ;;
+    esac
+fi
+}
+
 function hk() {
   if [ ! $# == 2 ]; then
     local currBranch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
@@ -151,3 +200,7 @@ function gc() {
         git checkout $1
     fi
 }
+
+#bindkeys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
