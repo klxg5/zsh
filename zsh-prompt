@@ -23,16 +23,16 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
         # If instead you want to show the marker only if there are untracked
         # files in $PWD, use:
         # [[ -n $(git ls-files --others --exclude-standard) ]] ; then
-        hook_com[staged]+='' # signify new files with a bang
+        hook_com[staged]+='+' # signify new files with a bang
     fi
 }
 
 zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:git:*' formats " %r/%S %b %m%u%c "
-zstyle ':vcs_info:git:*' formats " %F{24}(%F{160}%m%u%c%F{214} %F{199}%b%F{24})"
+zstyle ':vcs_info:git:*' formats " %F{39}(%F{202}%m%u%c%F{220} %F{205}%b%F{39})"
 
 # format our main prompt for hostname current folder, and permissions.
-PROMPT="%B%F{39}[%F{24}allen%F{160}@%F{24}work%F{39}] %(?:%F{green}➜ :%F{160}➜ )%F{24}%1~%{$reset_color%}"
+PROMPT="%B%F{39}[%F{159}allen%F{202}@%F{159}work%F{39}] %(?:%F{190}➜ :%F{202}➜ )%F{230}%1~%{$reset_color%}"
 # FOR DARK THEME PROMPT="%B%F{blue}[%#{white}%n%F{red}@%F{white}%m%F{blue}] %(?:%F{green}➜ :%F{red}➜ )%F{cyan}%c%{$reset_color%}"
 # PROMPT="%F{green}%n@%m %~ %{$reset_color%}%#> "
 PROMPT+="\$vcs_info_msg_0_ "
