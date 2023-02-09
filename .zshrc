@@ -20,19 +20,23 @@ zle -N down-line-or-beginning-search#
 
 # Useful Functions to source files and plugins
 source "$ZDOTDIR/zsh-functions"
-
-# source files
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
-zsh_add_file "zsh-misc-config"
+source "$ZDOTDIR/plugins/zsh-async/async.zsh"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 zsh_add_plugin "zsh-users/zsh-history-substring-search"
+
+# source files
+zsh_add_file "zsh-exports"
+zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-aliases"
+# zsh_add_file "zsh-prompt"
+zsh_add_file "zsh-misc-config"
+
+#Themes
+zsh_add_theme "dracula/zsh"
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
