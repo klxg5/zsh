@@ -6,4 +6,7 @@ export PATH="$HOME/.mybin/bin":$PATH
 export PATH="$HOME/.cargo/bin":$PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export ATUIN_NOBIND="true"
 

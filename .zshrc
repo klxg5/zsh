@@ -12,6 +12,8 @@ zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 # zoxide
 eval "$(zoxide init zsh)"
+# atuin
+eval "$(atuin init zsh)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -30,7 +32,7 @@ zsh_add_plugin "zsh-users/zsh-history-substring-search"
 
 # source files
 zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
+# zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 # zsh_add_file "zsh-prompt"
 zsh_add_file "zsh-misc-config"
@@ -39,7 +41,7 @@ zsh_add_file "zsh-misc-config"
 zsh_add_theme "dracula/zsh"
 
 # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
+# autoload edit-command-line; zle -N edit-command-line
 
 export EDITOR="nvim"
 export TERMINAL="kitty"

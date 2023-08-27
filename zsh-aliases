@@ -203,5 +203,7 @@ function gc() {
 }
 
 #bindkeys
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
+bindkey '^r' _atuin_search_widget
+bindkey '^[[A' _atuin_search_widget
