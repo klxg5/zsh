@@ -13,7 +13,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # zoxide
 eval "$(zoxide init zsh)"
 # atuin
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
