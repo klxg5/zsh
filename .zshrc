@@ -5,6 +5,7 @@ zle_highlight=('paste:none')
 
 # completions
 autoload -Uz compinit
+compinit
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
@@ -14,6 +15,8 @@ _comp_options+=(globdots)		# Include hidden files.
 eval "$(zoxide init zsh)"
 # atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+# starship
+# eval "$(starship init zsh)"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -34,11 +37,11 @@ zsh_add_plugin "zsh-users/zsh-history-substring-search"
 zsh_add_file "zsh-exports"
 # zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
-# zsh_add_file "zsh-prompt"
+zsh_add_file "zsh-prompt"
 zsh_add_file "zsh-misc-config"
 
 #Themes
-zsh_add_theme "dracula/zsh"
+# zsh_add_theme "dracula/zsh"
 
 # Edit line in vim with ctrl-e:
 # autoload edit-command-line; zle -N edit-command-line

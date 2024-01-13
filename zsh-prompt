@@ -34,7 +34,8 @@ zstyle ':vcs_info:git:*' formats " %F{109}(%F{208}%m%u%c%F{214} %F{208}%b%F{1
 
 # format our main prompt for hostname current folder, and permissions.
 # Genric Dark # PROMPT="%B%F{39}[%F{159}allen%F{202}@%F{159}work%F{39}] %(?:%F{190}➜ :%F{202}➜ )%F{230}%1~%{$reset_color%}"
-PROMPT="%B%F{109}[%F{229}allen%F{167}@%F{229}work%F{109}] %(?:%F{142}➜ :%F{167}➜ )%F{167}%1~%{$reset_color%}"
+# PROMPT="%B%F{109}[%F{229}allen%F{167}@%F{229}work%F{109}] %(?:%F{142}➜ :%F{167}➜ )%F{167}%1~%{$reset_color%}"
+PROMPT="%B%F{017}[%F{088}allen%F{017}@%F{088}work%F{017}] %(?:%F{017}➜ :%F{088}➜ )%F{088}%1~%{$reset_color%}"
 # FOR DARK THEME PROMPT="%B%F{blue}[%#{white}%n%F{red}@%F{white}%m%F{blue}] %(?:%F{green}➜ :%F{red}➜ )%F{cyan}%c%{$reset_color%}"
 # PROMPT="%F{green}%n@%m %~ %{$reset_color%}%#> "
 PROMPT+="\$vcs_info_msg_0_ "

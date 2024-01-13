@@ -9,4 +9,11 @@ export MANWIDTH=999
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export ATUIN_NOBIND="true"
-
+## Installed from pip(x)
+export PATH="$PATH:/home/allen/.local/bin"
+export PATH="$PATH:/home/allen/.local/bin/flutter/bin"
+export PATH="$PATH:/home/allen/.config/composer/vendor/bin"
+## the following is to get nvm to work
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
