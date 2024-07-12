@@ -1,206 +1,206 @@
 
-alias c="clear"
-alias cdc="cd ~/code/cw/CampingWorldRVSales"
-alias cdh="cd ~/Homestead"
-alias gb="git branch"
-alias gc="git checkout"
-alias gbc="git checkout -b"
-alias gbd="git branch -D"
-alias gh="git gc --aggressive --prune=now"
-alias gd="git diff --ignore-space-at-eol"
-alias gds="git diff --staged --ignore-space-at-eol"
-alias gf="git fetch --all --prune"
-alias gl="git log --stat --abbrev-commit"
-alias gn="git clean -fdx storage/"
-alias gs="git status"
+# alias c="clear"
+# alias cdc="cd ~/code/cw/CampingWorldRVSales"
+# alias cdh="cd ~/Homestead"
+# alias gb="git branch"
+# alias gc="git checkout"
+# alias gbc="git checkout -b"
+# alias gbd="git branch -D"
+# alias gh="git gc --aggressive --prune=now"
+# alias gd="git diff --ignore-space-at-eol"
+# alias gds="git diff --staged --ignore-space-at-eol"
+# alias gf="git fetch --all --prune"
+# alias gl="git log --stat --abbrev-commit"
+# alias gn="git clean -fdx storage/"
+# alias gs="git status"
 alias ll="ls -lah -F --color=auto"
 alias ls="ls -lh -F --color=auto"
-alias npl="npm list -g --depth=0"
-alias npo="npm outdated -g --depth=0"
-alias vm="ssh vagrant@127.0.0.1 -p 2222"
-alias phpunit='vendor/bin/phpunit'
-alias hu="homestead up"
-alias hd="homestead destroy"
-alias hs="homestead suspend"
-alias hh="homestead halt"
-
+# alias npl="npm list -g --depth=0"
+# alias npo="npm outdated -g --depth=0"
+# alias vm="ssh vagrant@127.0.0.1 -p 2222"
+# alias phpunit='vendor/bin/phpunit'
+# alias hu="homestead up"
+# alias hd="homestead destroy"
+# alias hs="homestead suspend"
+# alias hh="homestead halt"
+#
 alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
 
 function artisan() {
     php artisan "$@"
 }
 
-function homestead() {
-    if [[ $1 == "update" ]]; then
-        (
-            cdh
-            gf
-            git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
-            vagrant destroy --force
-            vagrant box update
-            vagrant box prune --force
-            vagrant up
-        )
-    else
-        ( cdh && vagrant $* )
-    fi
-}
-
-function br() {
-	if !( ${#} == 2 ); then
-		echo "moo"
-	else
-		echo "maa"
-	fi
-	echo "$#"
-}
-
-function hktool() {
-    function interactiveset() {
-        heroku apps -A
-        echo "Press CTRL C to exit"
-        read app\?"Which preview app do you want to update? "
-        read evar\?"What ENV variable in ${app} do you want to update or add? "
-        read value\?"What value should ${evar} have? "
-        heroku config:set ${evar}=${value} -a ${app}
-    }
-    function errmsg() {
-        echo "Invalid format"
-    }
-if [[ $# -eq 0 ]]; then
-    interactiveset
-else
-    case $1 in
-        get)
-            if [[ $# -eq 3 ]]; then
-                heroku config:get ${2} -a ${3}
-            elif [[ $# -eq 1 ]]; then
-                heroku apps -A
-                echo "Press CTRL C to exit"
-                read app\?"Which preview app do you want to look up? "
-                read evar\?"What ENV variable in ${app} do you want to check? "
-                heroku config:get ${evar} -a ${app}
-            else
-                errmsg
-            fi
-            ;;
-        set)
-            if [[ $# -eq 3 ]]; then
-                heroku config:set ${2} -a ${3}
-            elif [[ $# -eq 1 ]]; then
-                interactiveset
-            else
-                errmsg
-            fi
-            ;;
-        list | ls)
-            heroku apps -A
-            ;;
-        *)
-            errmsg
-            ;;
-    esac
-fi
-}
-
-function hk() {
-  if [ ! $# == 2 ]; then
-    local currBranch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-    local appBranch="${2:=$currBranch}"
-  # local appName=$("cwdevapp-${appBranch}" | tr '[:upper:]' '[:lower:]')
-  # local appName=$appRawName | tr '[:upper:]' '[:lower:]'
-
-    case $1 in
-      create)
-        #heroku apps:create -a "$appBranch" -s heroku-18
-        #hk config "$appBranch"
-	echo "currBranch"
-	echo "appBranch"
-      ;;
-
-      push-vars)
-        #heroku config:push -f .env.heroku -o -a "$appBranch"
-      ;;
-
-      replace-vars)
-        #heroku config:push -f .env.heroku -o -c -a "$appBranch"
-      ;;
-
-      destroy)
-        #heroku apps:destroy --app "$appBranch" --confirm "$appBranch"
-      ;;
-
-      boom)
-        echo "my name is boom boom"
-      ;;
-
-      derp)
-        echo "$appName"
-      ;;
-
-      *)
-        echo "unknown command \"${1}\""
-      ;;
-    esac
-  fi
-}
-
-function hk-destroy() {
-  heroku apps:destroy --app "$1" --confirm "$1"
-}
-
-function hk-create(){
-  heroku apps:create -a "$1" -s heroku-18
-  $(hk-config "$1")
-}
-
-function hk-config-overwrite(){
-    heroku config:push -f .env.heroku -o -c -a "$1"
-}
-
-function hk-config() {
-    heroku config:push -f .env.heroku -o -a "$1"
-}
-
-# function hpush(){
-#     if [ $# -ne 1 ]; then
-#         echo "Heroku Push Usage: hpush {appName}" >&2
-#         return 1
+# function homestead() {
+#     if [[ $1 == "update" ]]; then
+#         (
+#             cdh
+#             gf
+#             git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+#             vagrant destroy --force
+#             vagrant box update
+#             vagrant box prune --force
+#             vagrant up
+#         )
 #     else
-#         preview_env=~/Code/default-env
-#         #update the env file with the domain info
-#         sed -i '' "s;^APP_URL=.*;APP_URL=https://$1.herokuapp.com;" $preview_env
-#         sed -i '' "s;^APP_DOMAIN=.*;APP_DOMAIN=$1.herokuapp.com;" $preview_env
-#         domain_id="1"
-#         if [[ $1 =~ "rvwor" ]]; then
-#             domain_id="2"
-#         fi
-#         if [[ $1 =~ "gander" ]] || [[ $1 =~ "gr" ]]; then
-#           domain_id="3"
-#         fi
-#         if [[ $1 =~ "rvscom" ]]; then
-#           domain_id="4"
-#         fi
-#         if [[ $1 =~ "rvcom" ]]; then
-#           domain_id="5"
-#         fi
-#         if [[ $1 =~ "rvout" ]]; then
-#           domain_id="6"
-#         fi
-#         sed -i '' "s;^DOMAIN_ID=.*;DOMAIN_ID=$domain_id;" $preview_env
-#         #push the config
-#         heroku config:push -a $1 -o -c -f=$preview_env
-#         return 0
+#         ( cdh && vagrant $* )
 #     fi
 # }
-
-function gc() {
-    if [[ -z "$1" ]]; then
-        git checkout $(git branch | cut -c 3- |fzy)
-    else
-        git checkout $1
-    fi
-}
+#
+# function br() {
+# 	if !( ${#} == 2 ); then
+# 		echo "moo"
+# 	else
+# 		echo "maa"
+# 	fi
+# 	echo "$#"
+# }
+#
+# function hktool() {
+#     function interactiveset() {
+#         heroku apps -A
+#         echo "Press CTRL C to exit"
+#         read app\?"Which preview app do you want to update? "
+#         read evar\?"What ENV variable in ${app} do you want to update or add? "
+#         read value\?"What value should ${evar} have? "
+#         heroku config:set ${evar}=${value} -a ${app}
+#     }
+#     function errmsg() {
+#         echo "Invalid format"
+#     }
+# if [[ $# -eq 0 ]]; then
+#     interactiveset
+# else
+#     case $1 in
+#         get)
+#             if [[ $# -eq 3 ]]; then
+#                 heroku config:get ${2} -a ${3}
+#             elif [[ $# -eq 1 ]]; then
+#                 heroku apps -A
+#                 echo "Press CTRL C to exit"
+#                 read app\?"Which preview app do you want to look up? "
+#                 read evar\?"What ENV variable in ${app} do you want to check? "
+#                 heroku config:get ${evar} -a ${app}
+#             else
+#                 errmsg
+#             fi
+#             ;;
+#         set)
+#             if [[ $# -eq 3 ]]; then
+#                 heroku config:set ${2} -a ${3}
+#             elif [[ $# -eq 1 ]]; then
+#                 interactiveset
+#             else
+#                 errmsg
+#             fi
+#             ;;
+#         list | ls)
+#             heroku apps -A
+#             ;;
+#         *)
+#             errmsg
+#             ;;
+#     esac
+# fi
+# }
+#
+# function hk() {
+#   if [ ! $# == 2 ]; then
+#     local currBranch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+#     local appBranch="${2:=$currBranch}"
+#   # local appName=$("cwdevapp-${appBranch}" | tr '[:upper:]' '[:lower:]')
+#   # local appName=$appRawName | tr '[:upper:]' '[:lower:]'
+#
+#     case $1 in
+#       create)
+#         #heroku apps:create -a "$appBranch" -s heroku-18
+#         #hk config "$appBranch"
+# 	echo "currBranch"
+# 	echo "appBranch"
+#       ;;
+#
+#       push-vars)
+#         #heroku config:push -f .env.heroku -o -a "$appBranch"
+#       ;;
+#
+#       replace-vars)
+#         #heroku config:push -f .env.heroku -o -c -a "$appBranch"
+#       ;;
+#
+#       destroy)
+#         #heroku apps:destroy --app "$appBranch" --confirm "$appBranch"
+#       ;;
+#
+#       boom)
+#         echo "my name is boom boom"
+#       ;;
+#
+#       derp)
+#         echo "$appName"
+#       ;;
+#
+#       *)
+#         echo "unknown command \"${1}\""
+#       ;;
+#     esac
+#   fi
+# }
+#
+# function hk-destroy() {
+#   heroku apps:destroy --app "$1" --confirm "$1"
+# }
+#
+# function hk-create(){
+#   heroku apps:create -a "$1" -s heroku-18
+#   $(hk-config "$1")
+# }
+#
+# function hk-config-overwrite(){
+#     heroku config:push -f .env.heroku -o -c -a "$1"
+# }
+#
+# function hk-config() {
+#     heroku config:push -f .env.heroku -o -a "$1"
+# }
+#
+# # function hpush(){
+# #     if [ $# -ne 1 ]; then
+# #         echo "Heroku Push Usage: hpush {appName}" >&2
+# #         return 1
+# #     else
+# #         preview_env=~/Code/default-env
+# #         #update the env file with the domain info
+# #         sed -i '' "s;^APP_URL=.*;APP_URL=https://$1.herokuapp.com;" $preview_env
+# #         sed -i '' "s;^APP_DOMAIN=.*;APP_DOMAIN=$1.herokuapp.com;" $preview_env
+# #         domain_id="1"
+# #         if [[ $1 =~ "rvwor" ]]; then
+# #             domain_id="2"
+# #         fi
+# #         if [[ $1 =~ "gander" ]] || [[ $1 =~ "gr" ]]; then
+# #           domain_id="3"
+# #         fi
+# #         if [[ $1 =~ "rvscom" ]]; then
+# #           domain_id="4"
+# #         fi
+# #         if [[ $1 =~ "rvcom" ]]; then
+# #           domain_id="5"
+# #         fi
+# #         if [[ $1 =~ "rvout" ]]; then
+# #           domain_id="6"
+# #         fi
+# #         sed -i '' "s;^DOMAIN_ID=.*;DOMAIN_ID=$domain_id;" $preview_env
+# #         #push the config
+# #         heroku config:push -a $1 -o -c -f=$preview_env
+# #         return 0
+# #     fi
+# # }
+#
+# function gc() {
+#     if [[ -z "$1" ]]; then
+#         git checkout $(git branch | cut -c 3- |fzy)
+#     else
+#         git checkout $1
+#     fi
+# }
 
 #bindkeys
 bindkey '^[[A' history-substring-search-up

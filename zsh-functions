@@ -10,7 +10,7 @@ function zsh_add_plugin() {
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
-        git clone "git@github.com:$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        git clone --depth=1 "git@github.com:$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
     fi
 }
 
@@ -21,7 +21,7 @@ function zsh_add_theme() {
         zsh_add_file "themes/$THEME_NAME/$THEME_NAME.plugin.zsh" || \
         zsh_add_file "themes/$THEME_NAME/$THEME_NAME.zsh"
     else
-        git clone "git@github.com:$1.git" "$ZDOTDIR/themes/$THEME_NAME"
+        git clone --depth=1 "git@github.com:$1.git" "$ZDOTDIR/themes/$THEME_NAME"
     fi
     source "$ZDOTDIR/themes/dracula.zsh"
 }
