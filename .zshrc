@@ -29,7 +29,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search#
+zle -N down-line-or-beginning-search
 
 # Useful Functions to source files and plugins
 source "$ZDOTDIR/zsh-functions"

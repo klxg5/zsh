@@ -30,10 +30,10 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    # os_icon               # os identifier
     dir                     # current directory
     vcs                     # git status
     prompt_char             # prompt symbol
+    os_icon               # os identifier
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -182,9 +182,12 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=178
   # Custom icon.
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
+  # typeset -g POWERLEVEL9K_LINUX_OPENSUSE_ICON=''
+  # typeset -g POWERLEVEL9K_LINUX_ARCH_ICON='Arch'
+  # typeset -g POWERLEVEL9K_LINUX_DEBIAN_ICON='Debian'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='${P9K_CONTENT}'  # not bold
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
