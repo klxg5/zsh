@@ -33,7 +33,7 @@
     dir                     # current directory
     vcs                     # git status
     prompt_char             # prompt symbol
-    os_icon               # os identifier
+    # os_icon               # os identifier
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
