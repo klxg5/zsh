@@ -4,6 +4,7 @@ SAVEHIST=1000000
 HISTFILE=~/.config/zsh/.zsh_history
 export PATH="$HOME/.mybin/bin":$PATH
 export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/go/bin":$PATH
 export PATH="$HOME/.local/bin/nvim/bin":$PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
@@ -11,10 +12,13 @@ export MANWIDTH=999
 # export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export ATUIN_NOBIND="true"
 ## Installed from pip(x)
-export PATH="$PATH:/home/allen/.local/bin"
-export PATH="$PATH:/home/allen/.local/bin/flutter/bin"
-export PATH="$PATH:/home/allen/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/flutter/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/.local/bin/bun/bin" 
 ## the following is to get nvm to work
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export PATH="/home/allen/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/allen/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

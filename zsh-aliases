@@ -26,9 +26,18 @@ alias ls="ls -lh -F --color=auto"
 #
 alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
 
+# distrobox
+alias host="distrobox-host-exec"
+
+function pod() {
+    distrobox-host-exec podman "$@"
+}
+
 function artisan() {
     php artisan "$@"
 }
+
+# alias podc="/usr/bin/podman-compose-3.13"
 
 # function homestead() {
 #     if [[ $1 == "update" ]]; then

@@ -80,3 +80,6 @@ bindkey -r "^d"
 
 # To customize prompt, run `p10k configure` or edit ~/Sync/allen/zsh/.p10k.zsh.
 [[ ! -f ~/Sync/allen/zsh/.p10k.zsh ]] || source ~/Sync/allen/zsh/.p10k.zsh
+
+# bun completions
+[ -s "/home/allen/.bun/_bun" ] && source "/home/allen/.bun/_bun"
