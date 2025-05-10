@@ -210,6 +210,13 @@ function artisan() {
 #         git checkout $1
 #     fi
 # }
+function resumed() {
+    if [[ -z "$1" ]] || [ $PWD != $HOME/code/resume ]; then
+        echo "Error: problem running $0"
+        return 1 
+    fi
+        ./node_modules/resumed/bin/resumed.js $@
+}
 
 #bindkeys
 bindkey '^[[A' history-substring-search-up
