@@ -22,7 +22,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # zoxide
 eval "$(zoxide init zsh)"
 # atuin
-eval "$(atuin init zsh --disable-up-arrow)"
+# eval "$(atuin init zsh --disable-up-arrow)"
 # starship
 # eval "$(starship init zsh)"
 

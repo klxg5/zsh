@@ -218,6 +218,14 @@ function resumed() {
         ./node_modules/resumed/bin/resumed.js $@
 }
 
+function jigsaw() {
+    if [[ -z "$1" ]]; then
+        echo "Error: problem running $0"
+        return 1 
+    fi
+        ./vendor/bin/jigsaw $@
+}
+
 #bindkeys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
